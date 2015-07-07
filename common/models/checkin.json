@@ -1,0 +1,42 @@
+{
+  "name": "Checkin",
+  "plural": "checkins",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "obs": {
+      "type": "string"
+    },
+    "location": {
+      "type": "geopoint",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "at": {
+      "type": "date",
+      "required": true,
+      "defaultFn": "now"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "agent": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": ""
+    },
+    "route": {
+      "type": "belongsTo",
+      "model": "Route",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": []
+}

@@ -1,0 +1,27 @@
+{
+  "name": "Route",
+  "plural": "routes",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "places": {
+      "type": "hasAndBelongsToMany",
+      "model": "Place",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": []
+}
