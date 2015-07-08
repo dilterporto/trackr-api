@@ -6,8 +6,10 @@
   "mongodb": {
     "name": "mongodb",
     "connector": "mongodb",
-    "host": "localhost",
-    "database": "trackrapp",
-    "port": 27017
+    "user": "trackruser",
+    "password": "Devmaster1024",
+    "host": "ds045632.mongolab.com",
+    "database": "heroku_x0bbmx6t",
+    "port": 45632
   }
 }
