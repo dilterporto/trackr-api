@@ -4,12 +4,12 @@
     "connector": "memory"
   },
   "mongodb": {
+    "host": "ds045632.mongolab.com",
+    "port": 45632,
+    "database": "heroku_x0bbmx6t",
+    "password": "Devmaster1024",
     "name": "mongodb",
     "connector": "mongodb",
-    "user": "trackruser",
-    "password": "Devmaster1024",
-    "host": "ds045632.mongolab.com",
-    "database": "heroku_x0bbmx6t",
-    "port": 45632
+    "user": "trackruser"
   }
 }

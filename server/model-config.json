@@ -44,5 +44,9 @@
   "Checkin": {
     "dataSource": "mongodb",
     "public": true
+  },
+  "Track": {
+    "dataSource": "mongodb",
+    "public": true
   }
 }

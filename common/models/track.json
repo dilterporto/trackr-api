@@ -1,0 +1,57 @@
+{
+  "name": "Track",
+  "plural": "tracks",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "string",
+      "required": true,
+      "enum": [
+        "notStarted",
+        "started",
+        "finalized",
+        "canceled"
+      ],
+      "default": "notStarted"
+    },
+    "startedAt": {
+      "type": "date",
+      "required": true,
+      "defaultFn": "now"
+    },
+    "finishedAt": {
+      "type": "date"
+    },
+    "canceledAt": {
+      "type": "date"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "route": {
+      "type": "belongsTo",
+      "model": "Route",
+      "foreignKey": ""
+    },
+    "agent": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": ""
+    },
+    "checkins": {
+      "type": "hasMany",
+      "model": "Checkin",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": []
+}
