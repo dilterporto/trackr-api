@@ -16,9 +16,9 @@
   },
   "validations": [],
   "relations": {
-    "places": {
+    "points": {
       "type": "hasAndBelongsToMany",
-      "model": "Place",
+      "model": "Point",
       "foreignKey": ""
     }
   },

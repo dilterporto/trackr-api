@@ -1,6 +1,6 @@
 {
-  "name": "Place",
-  "plural": "places",
+  "name": "Point",
+  "plural": "points",
   "base": "PersistedModel",
   "idInjection": true,
   "options": {
