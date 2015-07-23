@@ -5,7 +5,7 @@
   },
   "mongodb": {
     "host": "ds053858.mongolab.com",
-    "port": 45632,
+    "port": 53858,
     "database": "heroku_jc4c9k3g",
     "password": "Devmaster1024",
     "name": "mongodb",
