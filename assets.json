@@ -1,0 +1,9 @@
+{
+  "vendor": {
+    "libs.js@concat": [
+
+      "angular/angular.min.js",
+      "angular/angular-route.min.js"
+    ]
+  }
+}

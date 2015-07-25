@@ -1,5 +1,10 @@
 module.exports = function(Track) {
 
+  /**
+   * Start a track
+   * @param {String} trackId The track will starts
+   * @returns {Object} The normalized credential object
+   */
     Track.start = function(trackId, cb){
 
         console.log(trackId);
