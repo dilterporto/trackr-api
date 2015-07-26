@@ -22,10 +22,13 @@
       ],
       "default": "notStarted"
     },
-    "startedAt": {
+    "createdAt": {
       "type": "date",
       "required": true,
       "defaultFn": "now"
+    },
+    "startedAt": {
+      "type": "date"
     },
     "finishedAt": {
       "type": "date"

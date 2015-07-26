@@ -180,13 +180,13 @@
               </li>
             </ul>
           </li>
-          <li class="dropdown">
+          <!-- <li class="dropdown">
             <a data-toggle="dropdown" href="javascript:void(0)" title="Messages" aria-expanded="false" data-animation="slide-bottom" role="button">
               <i class="icon wb-envelope" aria-hidden="true"></i>
               <span class="badge badge-info up">3</span>
             </a>
 
-          </li>
+          </li> -->
 
         </ul>
         <!-- End Navbar Toolbar Right -->
@@ -219,19 +219,19 @@
                 <i class="site-menu-icon wb-pie-chart" aria-hidden="true"></i>
                 <span class="site-menu-title">Visão Geral</span>
                 <div class="site-menu-badge">
-
+                  <span class="badge badge-success">{{tracksStarted.length}}</span>
                 </div>
               </a>
             </li>
-            <li class="site-menu-item">
-              <a href="javascript:void(0)">
-                <i class="site-menu-icon wb-pie-chart" aria-hidden="true"></i>
-                <span class="site-menu-title">Em execução</span>
-                <div class="site-menu-badge">
-                  <span class="badge badge-success">2</span>
-                </div>
-              </a>
-            </li>
+            <!--<li class="site-menu-item">-->
+              <!--<a href="javascript:void(0)">-->
+                <!--<i class="site-menu-icon wb-pie-chart" aria-hidden="true"></i>-->
+                <!--<span class="site-menu-title">Em execução</span>-->
+                <!--<div class="site-menu-badge">-->
+                  <!--<span class="badge badge-success">{{tracksStarted.length}}</span>-->
+                <!--</div>-->
+              <!--</a>-->
+            <!--</li>-->
             <li class="site-menu-category">Programação</li>
             <li class="site-menu-item">
               <a href="#/routes">
@@ -292,6 +292,7 @@
   <script src="js/lib/angular.js"></script>
   <script src="js/lib/angular-route.min.js"></script>
   <script src="js/lib/angular-resource.js"></script>
+  <script src="js/lib/humanize.js"></script>
 
   <script src="socket.io/socket.io.js"></script>
   <script src="js/lib/socket.js"></script>

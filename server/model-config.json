@@ -15,7 +15,7 @@
   },
   "User": {
     "dataSource": "mongodb",
-    "public": true
+    "public": false
   },
   "AccessToken": {
     "dataSource": "mongodb",
@@ -46,6 +46,10 @@
     "public": true
   },
   "Track": {
+    "dataSource": "mongodb",
+    "public": true
+  },
+  "Agent": {
     "dataSource": "mongodb",
     "public": true
   }
