@@ -2,7 +2,11 @@
  * Created by dilter on 7/25/15.
  */
 
-var app = angular.module('app', [ 'lbServices', 'ngRoute']);
+var app = angular.module('app', [ 'lbServices', 'ngRoute', 'btford.socket-io']);
+
+app.factory('SocketApi', function (socketFactory) {
+  return socketFactory();
+});
 
 app.config(function ($routeProvider) {
     $routeProvider
@@ -15,9 +19,13 @@ app.config(function ($routeProvider) {
         controller: 'RouteController'
       });
   })
-  .controller('MainController', function(){
+  .controller('MainController', function(SocketApi){
 
+    SocketApi.on('statusChecked', function(){
 
+      alert('status was Checked');
+
+    });
 
   })
   .controller('DashboardController', function(){

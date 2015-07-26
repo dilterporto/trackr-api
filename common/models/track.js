@@ -1,10 +1,22 @@
 module.exports = function(Track) {
 
+
   /**
-   * Start a track
-   * @param {String} trackId The track will starts
-   * @returns {Object} The normalized credential object
+   * Hooks
    */
+    Track.afterRemote('create', function(context, model, next){
+
+      Track.app.io.emit('trackCreated', model);
+
+      next();
+
+    });
+
+    /**
+    * Start a track
+    * @param {String} trackId The track will starts
+    * @returns {Object} The normalized credential object
+    */
     Track.start = function(trackId, cb){
 
         console.log(trackId);
