@@ -1,5 +1,12 @@
 module.exports = function(Track) {
 
+  /**
+   * Instance methods
+   */
+  Track.prototype.started = function(){
+    return this.status === 'started';
+  };
+
 
   /**
    * Hooks
@@ -26,6 +33,9 @@ module.exports = function(Track) {
             if(err)
                 cb(err);
 
+            if(track.started())
+              cb(new Error('track has already started', track.id));
+
             track.status = 'started';
             track.startedAt = Date.now();
 
@@ -44,10 +54,10 @@ module.exports = function(Track) {
             { arg: 'trackId', type: 'string', http:{ source: 'path' }}
         ],
         returns: {
-            type: 'object'
+            arg: 'track', type: 'object'
         },
         http: {
-            path: '/start/:trackId',
+            path: '/:trackId/start',
             verb: 'put'
         }
     });
