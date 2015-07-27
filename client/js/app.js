@@ -1,8 +1,11 @@
 var app = angular.module('app',
 [
   'app.services',
+  'toaster',
   'ngRoute',
+  'ngAnimate',
   'btford.socket-io'
+
 ]);
 
 app.factory('SocketApi', function (socketFactory) {
@@ -20,22 +23,25 @@ app.config(function ($routeProvider) {
     });
 })
 .factory('Humanize', function(){
-
   return Humanize;
 })
-.controller('MainController', function($scope, Humanize, Track, Checkin, SocketApi){
+.controller('MainController', function($scope, toaster, Humanize, Track, Checkin, SocketApi){
 
   $scope.pluralize = function(val, term){
     return Humanize.pluralize(val, term);
   };
 
+  $scope.notify = function (type, title, text) {
+    toaster.pop(type, title, text);
+  };
+
+  var calculateTrackCompleted = function(track){
+    track.completed = track.checkins.length / track.route.points.length;
+    return track;
+  };
+
   var onGetStartedTracks = function(started){
-
-    started.forEach(function(track){
-      track.completed = track.checkins.length / track.route.points.length;
-    });
-
-    $scope.tracksStarted = started;
+    $scope.tracksStarted = started.map(calculateTrackCompleted);
   };
 
   var onGetAllCheckins = function(checkins){
@@ -61,7 +67,8 @@ app.config(function ($routeProvider) {
   }, onGetAllCheckins);
 
   SocketApi.on('trackStarted', function(track){
-    $scope.tracksStarted.push(track);
+    $scope.notify('success', 'Início de Track', 'Track ' + track.title + ' iniciada');
+    $scope.tracksStarted.push(calculateTrackCompleted(track));
   });
 
 })
@@ -75,11 +82,7 @@ app.config(function ($routeProvider) {
     .find({ filter: {include: 'points'} })
     .$promise
     .then(function(results) {
-
       $scope.routes = results;
-
-
-      console.log(results);
     });
 
 });

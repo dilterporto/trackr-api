@@ -27,11 +27,15 @@
   <!-- Fonts -->
   <link rel="stylesheet" href="css/web-icons.min.css">
   <link rel="stylesheet" href="css/brand-icons.min.css">
+  <link rel="stylesheet" href="css/toaster.min.css">
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic">
 
 </head>
-<body ng-app="app" ng-controller="MainController" class="site-menubar-unfold">
 
+
+
+<body ng-app="app" ng-controller="MainController" class="site-menubar-unfold">
+<toaster-container toaster-options="{'time-out': 3000, 'close-button':true, 'animation-class': 'toast-top-right'}"></toaster-container>
 
   <nav class="site-navbar navbar navbar-default navbar-fixed-top navbar-mega" role="navigation">
 
@@ -292,7 +296,9 @@
   <script src="js/lib/angular.js"></script>
   <script src="js/lib/angular-route.min.js"></script>
   <script src="js/lib/angular-resource.js"></script>
+  <script src="js/lib/angular-animate.min.js"></script>
   <script src="js/lib/humanize.js"></script>
+  <script src="js/lib/toaster.js"></script>
 
   <script src="socket.io/socket.io.js"></script>
   <script src="js/lib/socket.js"></script>
